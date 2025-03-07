@@ -22,7 +22,7 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');
+    gtag('config', 'G-8HS1ESFG8K');
   </script>
   <!-- Fin du code Google Analytics 4 -->
 </head>
@@ -39,11 +39,33 @@
  <p> Réinstaller GTM et GA4 sur CETTE PAGE </p>
 <h1> Exercice 2 <h1>
 <p> Tracker les liens suivants en utilisant les quatre méthodes suivantes : variables / class / datalayer.push / sélecteur CSS </p>
-<p><a href="https://arthurseche.github.io/eleve7/hello.html" > lien 1</a> <br>
-<a  href="https://arthurseche.github.io/eleve7/hello.html"> lien 2</a> <br>
- <a href="https://arthurseche.github.io/eleve7/hello.html" > lien 3</a> <br>
-   <a href="https://arthurseche.github.io/eleve7/hello.html" > lien 4</a> <br>
-   </p>
+
+<p>
+  <a href="https://arthurseche.github.io/eleve7/hello.html" id="link-variable">Lien avec variable</a>
+</p>
+
+<p>
+  <a class="track-link" href="https://arthurseche.github.io/eleve7/hello.html">Lien avec classe</a>
+</p>
+
+<p>
+  <a href="https://arthurseche.github.io/eleve7/hello.html" id="link-datalayer">Lien avec dataLayer.push</a>
+</p>
+
+<p>
+  <a class="css-selector-link" href="https://arthurseche.github.io/eleve7/hello.html">Lien avec sélecteur CSS</a>
+</p>
+
+<script>
+  document.getElementById('link-datalayer').addEventListener('click', function() {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'linkClick',
+      'linkUrl': this.href
+    });
+  });
+</script>
+
 <h1> Exercice 3 <h1>
 <p> Installer sur le site le pixel facebook présenté ci-dessous : </p>
 <p> 
